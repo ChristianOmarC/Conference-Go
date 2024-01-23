@@ -9,7 +9,7 @@ from .models import Conference, Location, State
 
 class LocationListEncoder(ModelEncoder):
     model = Location
-    properties = ["name", "picture_url"]
+    properties = ["id", "name", "picture_url"]
 
 
 class LocationDetailEncoder(ModelEncoder):
@@ -259,9 +259,5 @@ def api_list_states(request):
     state_list = []
 
     for state in state_data:
-        d ={
-            "name": state.name,
-            "abbreviation": state.abbreviation
-        }
-        state_list.append(d)
+        state_list.append(state.to_dict())
     return JsonResponse({"states": state_list})

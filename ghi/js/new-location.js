@@ -13,11 +13,6 @@ addEventListener("DOMContentLoaded", async () => {
             option.innerHTML = state.name
             selectTag.appendChild(option)
         }
-    }
-})
-
-addEventListener("DOMContentLoaded", async () => {
-
     const formTag = document.getElementById('create-location-form')
     formTag.addEventListener('submit', async event => {
         event.preventDefault()
@@ -39,4 +34,5 @@ addEventListener("DOMContentLoaded", async () => {
             console.log(newLocation)
     }
     })
+    }
 })
