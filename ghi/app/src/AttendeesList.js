@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function AttendeesList(props) {
+function AttendeesList() {
 
   const [attendees, setAttendees] = useState([])
 
@@ -24,7 +24,7 @@ function AttendeesList(props) {
               </tr>
             </thead>
             <tbody>
-              {props.attendees.map(attendee => {
+              {attendees.map(attendee => {
                 return (
                 <tr key={attendee.href}>
                   <td>{ attendee.name }</td>

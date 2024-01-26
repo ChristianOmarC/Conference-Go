@@ -6,13 +6,9 @@ import AttendConferenceForm from './AttendConferenceForm';
 import PresentationForm from './PresentationForm'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-function App(props) {
+function App() {
 
-  const { attendees } = props
 
-  if (props.attendees === undefined) {
-    return null;
-  }
   return (
     <BrowserRouter>
       <Nav />
@@ -25,8 +21,8 @@ function App(props) {
             <Route path="new" element={<ConferenceForm />} />
           </Route>
           <Route path="attendees">
+            <Route path="" element={<AttendeesList />} />
             <Route path="new" element={<AttendConferenceForm />} />
-            <Route path="" element={<AttendeesList attendees={props.attendees}/>} />
           </Route>
           <Route path="presentations">
             <Route path="new" element={<PresentationForm />} />

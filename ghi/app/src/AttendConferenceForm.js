@@ -28,6 +28,7 @@ function AttendConferenceForm() {
       data.name = name;
       data.email = email;
       const attendeeUrl = `http://localhost:8001/${data.conference}attendees/`;
+      console.log(attendeeUrl)
       const fetchOptions = {
         method: 'post',
         body: JSON.stringify(data),
