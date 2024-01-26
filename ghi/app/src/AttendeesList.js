@@ -15,6 +15,10 @@ function AttendeesList() {
     loadAttendees()
   }, [])
 
+if (attendees === undefined) {
+  return null;
+}
+
     return (
           <table className="table table-striped">
             <thead>
