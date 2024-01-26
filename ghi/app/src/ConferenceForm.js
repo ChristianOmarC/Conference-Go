@@ -102,7 +102,7 @@ function ConferenceForm() {
 
             <div className="mb-3">
               <label htmlFor="description">Description</label>
-              <textarea onChange={handleFormChange} className="form-control" id="description" rows="3" name="description" className="form-control"></textarea>
+              <textarea onChange={handleFormChange} id="description" rows="3" name="description" className="form-control"></textarea>
             </div>
 
             <div className="form-floating mb-3">

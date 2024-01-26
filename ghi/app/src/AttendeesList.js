@@ -1,6 +1,20 @@
-
+import React, { useEffect, useState } from 'react'
 
 function AttendeesList(props) {
+
+  const [attendees, setAttendees] = useState([])
+
+  const loadAttendees = async () => {
+    const response = await fetch('http://localhost:8001/api/attendees')
+    if (response.ok) {
+      const data = await response.json()
+      setAttendees(data.attendees)
+  }
+}
+  useEffect(() => {
+    loadAttendees()
+  }, [])
+
     return (
           <table className="table table-striped">
             <thead>
